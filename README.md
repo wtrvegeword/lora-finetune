@@ -19,3 +19,8 @@
 5. 权重融合
 - 修改lora-finetune/examples/merge_lora/llama3_lora_sft.yaml文件："model_name_or_path:"原始模型路径，"adapter_name_or_path:"微调生成新权重的路径，"export_dir:"融合后的输出路径
 - 运行llamafactory-cli export examples/merge_lora/llama3_lora_sft.yaml开始模型融合
+
+6. api部署
+- 这里提供vllm部署方案，因此需要进一步安装vllm引擎：pip install vllm，具体版本应当与cuda适配
+- 修改lora-finetune/examples/inference/llama3_vllm.yaml文件："model_name_or_path":为所部署的模型文件夹路径
+- 运行test_vllm.py文件测试部署情况
